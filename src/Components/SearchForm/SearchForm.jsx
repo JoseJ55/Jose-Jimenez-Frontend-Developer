@@ -21,17 +21,17 @@ function SearchForm() {
     }
 
     return (
-        <div className='text-white'>
-            <div>
-                <input type='text' placeholder='Search' onChange={handleSearchChange} value={searchValue} />
+        <div className='text-white grid grid-cols-12 justify-items-center items-stretch p-10'>
+            <div className='col-start-3 col-end-7 w-full'>
+                <input className='w-full text-black p-2 rounded' type='text' placeholder='Search' onChange={handleSearchChange} value={searchValue} />
             </div>
 
-            <div>
-                <button type='button' onClick={() => setShowDropDown(true)}>Filter</button>
+            <div className='col-start-8 col-end-10 w-full relative'>
+                <button className='w-full p-2 rounded bg-white text-black' type='button' onClick={() => setShowDropDown(!showDropDown)}>Filter</button>
                 {showDropDown ? 
-                    <div>
+                    <div className='flex flex-col justify-content absolute w-full mt-1 z-10'>
                         {filterOptions.map((option, index) => (
-                            <button key={index} onClick={() => handleFilterChange(option)}>{option}</button>
+                            <button className='mt-2 p-1 bg-white text-black w-full rounded' key={index} onClick={() => handleFilterChange(option)}>{option}</button>
                         ))}
                     </div>
                 : null}
