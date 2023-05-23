@@ -7,11 +7,17 @@ import Grid from './Components/Grid/Grid';
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Banner />
-      <SearchForm />
-      <Grid />
+    <div className='bg-black'>
+      <div className='min-h-screen relative'>
+        <div className='absolute inset-0'>
+          <Header />
+          <Banner />
+        </div>
+      </div>
+        <div className='relative'>
+          <SearchForm />
+          <Grid />
+        </div>
     </div>
   );
 }
